@@ -1,3 +1,20 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello World</text>
-<button size="mini">按钮</button>
+
+<!-- 1.小程序的数据绑定: {{}} -> Mustache -->
+<view class="title">Hello {{name}}</view>
+<view>我的年龄：{{age}}</view>
+
+<!-- 2,列表展示： wx:for -->
+<view wx:for="{{students}}">{{item.id}}-{{item.name}}</view>
+
+<!-- 3.事件监听改变data -->
+<view>当前计数: {{counter}}</view>
+<button size="mini" bindtap="handlerBtnClick">+</button>
+<button size="mini" bindtap="handlerSubClick">-</button>
+
+<!-- 2.获取用户信息的方式 -->
+<button size="mini" open-type="getUserInfo" bindgetuserinfo="handlerGetUserInfo">获取授权</button>
+
+<!-- 3.展示用户信息的方式 -->
+<open-data type="userNickName"></open-data>
+<open-data type="userAvatarUrl"></open-data>
