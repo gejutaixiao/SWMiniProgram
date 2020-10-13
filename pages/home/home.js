@@ -1,11 +1,35 @@
 // pages/home/home.js
 Page({
-
+  handleBtnClick() {
+    console.log('----')
+  },
+  handleTouchStart() {
+    console.log('handleTouchStart')
+  },
+  handleTouchMove() {
+    console.log('handleTouchMove')
+  },
+  handleTouchEnd() {
+    console.log('handleTouchEnd')
+  },
+  handleTap() {
+    console.log('handleTouchTap')
+  },
+  handleLongPress() {
+    console.log('handlelongpress')
+  },
+  handlerItemClick(event) {
+    console.log(event);
+    const dataset = event.currentTarget.dataset;
+    const title = dataset.item;
+    const index = dataset.index;
+    console.log(index, title)
+  },
   /**
    * 页面的初始数据
    */
   data: {
-
+    titles:['衣服', '裤子', '鞋子']
   },
 
   /**
