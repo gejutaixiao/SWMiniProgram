@@ -1,0 +1,53 @@
+<!--pages/wxml/wxml.wxml-->
+<text>pages/wxml/wxml.wxml</text>
+
+<!-- 1.wxml的格式 -->
+<view></view>
+
+<!-- 2.Mustache -->
+<view>{{message}}</view>
+<view>{{firstName}} {{lastName}}</view>
+
+<view>{{nowTime}}</view>
+
+
+ <view>-------------------</view>
+ <!-- wx:if的使用 -->
+ <button size="mini" bindtap="handler">切换</button>
+ <view wx:if="{{isshow}}">哈哈哈</view>
+
+<!-- wx:elif/wx:else -->
+
+<view>-----------列表渲染-------------</view>
+<!-- 1.wx:for的回顾 -->
+<!-- 1.1遍历数组/字符串/数字 -->
+<view wx:for="{{['a', 'b', 'c']}}">{{item}} {{index}}</view>
+
+<!-- <block wx:for="{{3}}">
+  <button>按钮</button>
+  <view>哈哈哈哈</view>
+  <view>呵呵呵呵</view>
+</block> -->
+
+<!-- 3.item,index起名字 -->
+<!-- <view wx:for="{{movies}}" wx:for-item="movie" wx:for-index="i">{{movie}} {{i}}</view> -->
+
+<!-- 4.key的作用 -->
+<!-- <view wx:for="{{['a', 'b', 'c']}}" wx:key="{{item}}">{{item}}</view> -->
+
+<view>----template----</view>
+<!-- 为了进行代码复用：template -->
+<!-- 模板中包裹的内容，在没有使用前，是不会进行任何渲染 -->
+<!-- <template name="contentItem">
+  <button size="mini">{{btnText}}</button>
+  <view>{{content}}</view>
+</template> -->
+
+
+<import src="/wxml/template.wxml"></import>
+
+<template is="contentItem" data="{{btnText: '按钮', content: '视图'}}" />
+<template is="contentItem" />
+<template is="contentItem" />
+<template is="contentItem" />
+<template is="contentItem" />
